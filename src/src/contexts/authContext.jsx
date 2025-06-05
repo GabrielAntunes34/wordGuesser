@@ -12,7 +12,7 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const myUser = mkGetUser('myUser');
         if(myUser)
-            setUser(JSON.parse(myUser));
+            setUser(myUser);
     }, []);
 
     // Saves user at localStorage when it changes

@@ -6,7 +6,7 @@ import { mkGetUser } from '../tests/userMock.js'
 
 const ProtectedRoutes = ({ allowedUsers }) => {
     // Pulling our mockup user from localstorage --> should be changed in the future
-    const user = mkGetUser('mockUser');
+    const user = mkGetUser('myUser');
 
     // Case for unlogged clients
     if(!user) {
