@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 // imports for specific components
 //import Layout from '../components/Layout/Layout';
-import ProtectedRoutes from './protectedRoutes';
+import ProtectedRoutes from './ProtectedRoutes';
 
 // Importing all page components
 import HomePage from '../pages/HomePage';

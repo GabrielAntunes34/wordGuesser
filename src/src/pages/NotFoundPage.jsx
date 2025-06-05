@@ -1,11 +1,8 @@
 import React from 'react';
-import { useState, useEffect, useContext } from 'react';
 
 const NotFoundPage = () => {
     return (
-        <>
-            <h1>MOCK - NotFound</h1>
-        </>
+        <h1 className='not-found-text'>404 - NotFound :(</h1>
     )
 };
 

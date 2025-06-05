@@ -1,19 +1,16 @@
 import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './components/Router';
+import { AuthProvider } from './contexts/authContext';
 import './App.css';
-
-//=======================================
-// MOCKS
-//=======================================
-import { loadMockUser } from './tests/userMock';
-loadMockUser();
 
 function App() {
   return (
     <>
-        <BrowserRouter>
-            <AppRoutes />
-        </BrowserRouter> 
+        <AuthProvider>
+          <BrowserRouter>
+              <AppRoutes />
+          </BrowserRouter> 
+        </AuthProvider>
     </>
   );
 }
