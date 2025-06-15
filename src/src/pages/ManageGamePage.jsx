@@ -1,9 +1,10 @@
 import React from 'react';
+import './ManageGamePage.css'
 import { Link } from 'react-router-dom';
 import WordInput from '../components/WordInput'
 import TagItem from '../components/TagItem';
 import { useGame } from '../contexts/gameContext';
-import { useState, useEffect, useContext } from 'react';
+import { useState } from 'react';
 
 // Page to manage and instanciate a new Guessing game
 const MyGamePage = () => {
@@ -14,7 +15,7 @@ const MyGamePage = () => {
     const handleGetFile = (e)=>{
         try {
             const file = e.target.files[0]
-            const result = loadCSV(file)
+            loadCSV(file)
         }
         catch(err) {
             setError('Invalid file');
@@ -22,7 +23,7 @@ const MyGamePage = () => {
     }
 
     return (
-        <>
+        <div className='manage-game'>
             <h2>Game manager</h2>
 
             {languages && <h3>{languages.mainLang} - {languages.translationLang}</h3>}
@@ -47,7 +48,7 @@ const MyGamePage = () => {
 
             {wordTags.length > 0 && <Link to='/guessGame'>Start game</Link>}
 
-        </>
+        </div>
     )
 };
 

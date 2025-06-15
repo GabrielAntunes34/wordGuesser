@@ -1,9 +1,9 @@
 import React from 'react';
+import './LoginPage.css'
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/authContext';
-import ErrorMessage from '../components/ErrorMessage';
-import { useState, useEffect, useContext } from 'react';
+import { useState } from 'react';
 
 // Form page to log in an already registered user
 
@@ -23,16 +23,16 @@ const LoginPage = () => {
             setError('Wrong credentials!');
         }
         else
-            Navigate('/');
+            Navigate('/manageGuessGame');
     }
 
     return (
-        <>
+        <div className='login-container'>
             <h2>Login</h2>
 
             {error && <p className='error-message'>{error}</p>}
             <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email:</label><br/>
+                <label htmlFor="email">Email:</label>
                 <input 
                     name='email'
                     type='text'
@@ -40,9 +40,8 @@ const LoginPage = () => {
                     onChange={e => setEmail(e.target.value)}
                     required
                 />
-                <br/>
 
-                <label htmlFor="password">Password:</label><br/>
+                <label htmlFor="password">Password:</label>
                 <input 
                     name='password'
                     type='text'
@@ -55,7 +54,7 @@ const LoginPage = () => {
             </form>
 
             <Link to='/signup'>Do not have an account? Sign Up!</Link>
-        </>
+        </div>
     )
 };
 

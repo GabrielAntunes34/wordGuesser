@@ -1,9 +1,9 @@
 import React from 'react';
+import './GuessGamePage.css'
 import { useGame } from '../contexts/gameContext';
 import { useNavigate } from 'react-router-dom';
 import { formatTime, shuffle, checkAnswer } from '../utils/gameFuncs';
-import { useState, useEffect, useContext } from 'react';
-import { useFormState } from 'react-dom';
+import { useState, useEffect } from 'react';
 
 // Implements the main game's logic and interface
 
