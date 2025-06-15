@@ -5,11 +5,11 @@ import { Routes, Route } from 'react-router-dom';
 import ProtectedRoutes from './ProtectedRoutes';
 
 // Importing all page components
-import HomePage from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
 import SignUpPage from '../pages/SignUpPage';
-import GuessGamePage from '../pages/GuessGamePage';
 import NotFoundPage from '../pages/NotFoundPage';
+import GuessGamePage from '../pages/GuessGamePage';
+import ManageGamePage from '../pages/ManageGamePage';
 
 
 // Keeps the list of routes of our application
@@ -19,14 +19,15 @@ const AppRoutes = () => {
             <Route path='/'>
 
                 {/* Common pages for visitors */}
-                <Route path='' element={<HomePage />} />
+                <Route path='' element={<LoginPage />} />
                 <Route path='login' element={<LoginPage />} />
                 <Route path='signup' element={<SignUpPage/>}/>
                 <Route path='*' element={<NotFoundPage />}/>
 
                 {/* Only logged users can play the games inside the site */}
                 <Route element={<ProtectedRoutes allowedUsers={['player']} />}>
-                    <Route path='guessGame/me' element={<GuessGamePage />}/>
+                    <Route path='guessGame' element={<GuessGamePage />}/>
+                    <Route path='manageGuessGame' element={<ManageGamePage />}/>
                 </Route>
             </Route>
         </Routes>

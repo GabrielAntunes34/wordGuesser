@@ -44,7 +44,6 @@ const AuthProvider = ({ children }) => {
 
     return (
         <>
-            {/* isAuth will be false if user === null */}
             <authContext.Provider value={{ user, setUser, login, logout, signup}}>
                 {children}
             </authContext.Provider>
@@ -55,4 +54,4 @@ const AuthProvider = ({ children }) => {
 // Just defining a hook to facilitate the use of this context
 const useAuth = () => useContext(authContext);
 
-export { AuthProvider, useAuth};
+export { AuthProvider, useAuth };

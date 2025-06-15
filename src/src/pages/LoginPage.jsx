@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/authContext';
 import ErrorMessage from '../components/ErrorMessage';
@@ -53,6 +54,8 @@ const LoginPage = () => {
 
                 <button type='submit'>Submit</button>
             </form>
+
+            <Link to='/signup'>Do not have an account? Sign Up!</Link>
         </>
     )
 };
