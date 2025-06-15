@@ -1,8 +1,8 @@
 import React from 'react';
+import './LoginPage.css'
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/authContext';
-import { useState, useEffect, useContext } from 'react';
 
 const SignUpPage = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -15,14 +15,14 @@ const SignUpPage = () => {
     }
 
     return (
-        <>
+        <div className='login-container'>
             <h2>Sign up</h2>
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                    <label htmlFor='email'>Email</label><br/>
+                    <label htmlFor='email'>Email</label>
                     <input
-                    type="email"
+                    type="text"
                     {...register('email', { 
                         required: 'Email is required', 
                         pattern: {
@@ -31,12 +31,11 @@ const SignUpPage = () => {
                         }
                     })}
                     />
-                    <br/>
                     {errors.email && <p>{errors.email.message}</p>}
                 </div>
 
                 <div>
-                    <label htmlFor="userName">User name:</label><br/>
+                    <label htmlFor="userName">User name:</label>
                     <input 
                         name='userName'
                         type='text'
@@ -44,12 +43,11 @@ const SignUpPage = () => {
                             required: 'user name is required', 
                         })}
                     />
-                    <br/>
                     {errors.userName && <p>{errors.userName.message}</p>}
                 </div>
 
                 <div>
-                    <label htmlFor="password">Password:</label><br/>
+                    <label htmlFor="password">Password:</label>
                     <input 
                         name='password'
                         type='password'
@@ -61,13 +59,13 @@ const SignUpPage = () => {
                             }
                         })}
                     />
-                    <br/>
                     {errors.password && <p>{errors.password.message}</p>}
                 </div>
 
+                <br/>
                 <button type='submit'>Register</button>
             </form>
-        </>
+        </div>
     )
 };
 
