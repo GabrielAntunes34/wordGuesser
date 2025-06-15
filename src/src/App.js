@@ -10,7 +10,9 @@ function App() {
         <AuthProvider>
           <GameProvider>
             <BrowserRouter>
+              <main>
                 <AppRoutes />
+              </main>
             </BrowserRouter> 
           </GameProvider>
         </AuthProvider>

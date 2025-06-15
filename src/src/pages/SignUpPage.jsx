@@ -49,7 +49,7 @@ const SignUpPage = () => {
                 </div>
 
                 <div>
-                    <label htmlFor="email">Password:</label><br/>
+                    <label htmlFor="password">Password:</label><br/>
                     <input 
                         name='password'
                         type='password'

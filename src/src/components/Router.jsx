@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 // imports for specific components
-//import Layout from '../components/Layout/Layout';
+import Layout from './layout/Layout'
 import ProtectedRoutes from './ProtectedRoutes';
 
 // Importing all page components
@@ -17,7 +17,7 @@ import ManageGamePage from '../pages/ManageGamePage';
 const AppRoutes = () => {
 	return (
         <Routes>
-            <Route path='/'>
+            <Route path='/' element={<Layout />}>
 
                 {/* Common pages for visitors */}
                 <Route path='' element={<LoginPage />} />
@@ -27,10 +27,14 @@ const AppRoutes = () => {
 
                 {/* Only logged users can play the games inside the site */}
                 <Route element={<ProtectedRoutes allowedUsers={['player']} />}>
-                    <Route path='guessGame' element={<GuessGamePage />}/>
                     <Route path='manageGuessGame' element={<ManageGamePage />}/>
-                    <Route path='endgame' element={<EndGamePage />} />
                 </Route>
+            </Route>
+
+            {/* Game routes without navbar and footer */}
+            <Route element={<ProtectedRoutes allowedUsers={['player']} />}>
+                <Route path='guessGame' element={<GuessGamePage />}/>
+                <Route path='endgame' element={<EndGamePage />} />
             </Route>
         </Routes>
 
