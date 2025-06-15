@@ -29,12 +29,10 @@ const GameProvider = ({ children }) => {
     };
 
     // Removes an wordTag from our state list in React
-    const removeWordTag = (string) => {
-        const wordTag = parseStrToWordTag(string);
-
+    const removeWordTag = (word) => {
         // searching and removing the specified element
         for(let i = 0; i < wordTags.length; i++) {
-            if(wordTags[i].word === wordTag.word) {
+            if(wordTags[i].word === word) {
                 setWordTags(prevWordTags => {
                     const updated = [...prevWordTags];
                     updated.splice(i, 1);
