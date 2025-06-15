@@ -8,8 +8,9 @@ import ProtectedRoutes from './ProtectedRoutes';
 import HomePage from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
 import SignUpPage from '../pages/SignUpPage';
-import GuessGamePage from '../pages/GuessGamePage';
 import NotFoundPage from '../pages/NotFoundPage';
+import GuessGamePage from '../pages/GuessGamePage';
+import ManageGamePage from '../pages/ManageGamePage';
 
 
 // Keeps the list of routes of our application
@@ -26,7 +27,8 @@ const AppRoutes = () => {
 
                 {/* Only logged users can play the games inside the site */}
                 <Route element={<ProtectedRoutes allowedUsers={['player']} />}>
-                    <Route path='guessGame/me' element={<GuessGamePage />}/>
+                    <Route path='guessGame' element={<GuessGamePage />}/>
+                    <Route path='manageGuessGame' element={<ManageGamePage />}/>
                 </Route>
             </Route>
         </Routes>

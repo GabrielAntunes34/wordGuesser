@@ -2,14 +2,17 @@ import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './components/Router';
 import { AuthProvider } from './contexts/authContext';
 import './App.css';
+import { GameProvider } from './contexts/gameContext';
 
 function App() {
   return (
     <>
         <AuthProvider>
-          <BrowserRouter>
-              <AppRoutes />
-          </BrowserRouter> 
+          <GameProvider>
+            <BrowserRouter>
+                <AppRoutes />
+            </BrowserRouter> 
+          </GameProvider>
         </AuthProvider>
     </>
   );
