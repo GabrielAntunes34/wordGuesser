@@ -23,6 +23,8 @@ const GameProvider = ({ children }) => {
         const alreadyExists = wordTags.some(wt => wt.word === wordTag.word);
         if (alreadyExists) return;
 
+        console.log("oi");
+
         setWordTags(prevWordTags => [...prevWordTags, wordTag]);
     };
 
@@ -74,8 +76,6 @@ const GameProvider = ({ children }) => {
                     for(let i = 1; i < data.length; i++) {
                         const wordTag = parseListToWordTag(data[i]);
                         newWordList.push(wordTag);
-                        //console.log('aquiii');
-                        //console.log(wordTag);
                     }
                     console.log(newWordList);
                     setWordTags(newWordList);

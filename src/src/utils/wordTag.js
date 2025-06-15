@@ -1,7 +1,11 @@
 // Auxiliar to break a string word: tranlation 1, translation 2, ...
 // into the wordCard object
 const parseStrToWordTag = (string) => {
-    const wordAndTrans = string.split(' : ', 2);
+    string = string.trim();
+    const wordAndTrans = string.split(':', 2);
+
+    console.log(wordAndTrans);
+
     const wordTag = {
         word: wordAndTrans[0],
         translations: wordAndTrans[1].split(', ')
