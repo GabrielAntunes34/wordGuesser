@@ -1,4 +1,5 @@
 import React from 'react';
+import './EndGamePage.css';
 import { useLocation } from 'react-router-dom';
 
 // Shows the user his game's results

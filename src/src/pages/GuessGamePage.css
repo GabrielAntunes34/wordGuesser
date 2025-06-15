@@ -72,10 +72,6 @@
   transition: background-color 0.2s ease;
 }
 
-.game-div button:hover {
-  background-color: #003d99;
-}
-
 /* Feedback após tentativa */
 .feedBack-message {
   margin-top: 1rem;

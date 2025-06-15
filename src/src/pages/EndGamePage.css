@@ -1,0 +1,16 @@
+.endgame-div {
+    text-align: center;
+    margin-top: 15%;
+}
+
+.endgame-div h1 {
+    color: var(--primary-color);
+    font-size: 4rem;
+    margin-bottom: 2%;
+}
+
+@media (max-width: 500px) {
+    .endgame-div h1 {
+        font-size: 2rem;
+    }
+}
