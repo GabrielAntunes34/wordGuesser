@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import ProtectedRoutes from './ProtectedRoutes';
 
 // Importing all page components
+import EndGamePage from '../pages/EndGamePage';
 import LoginPage from '../pages/LoginPage';
 import SignUpPage from '../pages/SignUpPage';
 import NotFoundPage from '../pages/NotFoundPage';
@@ -28,6 +29,7 @@ const AppRoutes = () => {
                 <Route element={<ProtectedRoutes allowedUsers={['player']} />}>
                     <Route path='guessGame' element={<GuessGamePage />}/>
                     <Route path='manageGuessGame' element={<ManageGamePage />}/>
+                    <Route path='endgame' element={<EndGamePage />} />
                 </Route>
             </Route>
         </Routes>

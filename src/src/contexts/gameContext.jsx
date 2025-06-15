@@ -72,7 +72,7 @@ const GameProvider = ({ children }) => {
                     // Setting the languages choosed for the game
                     setLanguages({
                         mainLang: data[0][0],
-                        translationLang: data[0][1]
+                        translationLang: data[0][1].trim()
                     })
 
 
