@@ -30,7 +30,6 @@ const LoginPage = () => {
         <>
             <h2>Login</h2>
 
-            <ErrorMessage message={error}/>
             {error && <p className='error-message'>{error}</p>}
             <form onSubmit={handleSubmit}>
                 <label htmlFor="email">Email:</label><br/>

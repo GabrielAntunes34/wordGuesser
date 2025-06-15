@@ -8,7 +8,7 @@ const authContext = createContext();
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
 
-     // Resets user from localStorage at each reload
+    // Resets user from localStorage at each reload
     useEffect(() => {
         const myUser = mkGetUser('myUser');
         if(myUser)

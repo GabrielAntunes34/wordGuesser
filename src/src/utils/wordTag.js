@@ -4,8 +4,6 @@ const parseStrToWordTag = (string) => {
     string = string.trim();
     const wordAndTrans = string.split(':', 2);
 
-    console.log(wordAndTrans);
-
     const wordTag = {
         word: wordAndTrans[0],
         translations: wordAndTrans[1].split(', ')

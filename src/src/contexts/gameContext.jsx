@@ -9,10 +9,22 @@ const gameContext = createContext();
 
 const GameProvider = ({ children }) => {
     const [languages, setLanguages] = useState(null);
-    const [wordTags, setWordTags] = useState([]);
     const [csvFile, setCsvFile] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
-
+    
+    // Instanciating wordTags as our main list of words
+    // to play with, and verifying if we already have one
+    // of them
+    const [wordTags, setWordTags] = useState(() => {
+        const saved = localStorage.getItem('wordTags');
+        return saved ? JSON.parse(saved) : [];
+    });
+    
+    // Saves wordData at localStorage when it changes
+    useEffect(() => {
+        if (wordTags)
+            localStorage.setItem('wordTags', JSON.stringify(wordTags));
+    }, [wordTags]);
 
 
     // Adds a brand new wrod tag into our wordTag state list
@@ -22,8 +34,6 @@ const GameProvider = ({ children }) => {
         // Verifying if there isn't any tag with this selection already
         const alreadyExists = wordTags.some(wt => wt.word === wordTag.word);
         if (alreadyExists) return;
-
-        console.log("oi");
 
         setWordTags(prevWordTags => [...prevWordTags, wordTag]);
     };
@@ -62,7 +72,7 @@ const GameProvider = ({ children }) => {
                     // Setting the languages choosed for the game
                     setLanguages({
                         mainLang: data[0][0],
-                        translationLang: data[0][1]
+                        translationLang: data[0][1].trim()
                     })
 
 
